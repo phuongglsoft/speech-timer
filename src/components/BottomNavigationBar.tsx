@@ -12,13 +12,13 @@ import { generateClassName } from '../utils/generate-class-name';
 function BottomNavigationBar({ status, handleIClick, handlePauseClick, handlePlayClick, handleReturnClick, handleSettingClick, handleShareClick }: BottomNavigationBarProps) {
     return (
         <div className={generateClassName(styles, ['bottom-navigation-bar-container', ...(status === TimeStatus.Running || status === TimeStatus.OverTimeRunning) ? ['dim'] : []])}>
-            <NavigationButton src={i} onClick={handleIClick} delayOnCLick disable={status === TimeStatus.Running} />
-            <NavigationButton src={setting} onClick={handleSettingClick} delayOnCLick disable={status === TimeStatus.Running} />
+            <NavigationButton src={i} onClick={handleIClick} delayOnCLick disable={status === TimeStatus.Running || status === TimeStatus.OverTimeRunning} />
+            <NavigationButton src={setting} onClick={handleSettingClick} delayOnCLick disable={status === TimeStatus.Running || status === TimeStatus.OverTimeRunning} />
             {
                 (status === TimeStatus.Running || status === TimeStatus.OverTimeRunning) ? <NavigationButton src={pauseSVG} onClick={handlePauseClick} /> : <NavigationButton src={playSVG} onClick={handlePlayClick} />
             }
             <NavigationButton src={returnSVG} onClick={handleReturnClick} imgStyle={{ transform: 'scaleX(-1)' }} />
-            <NavigationButton src={share} delayOnCLick onClick={handleShareClick} disable={status === TimeStatus.Running} />
+            <NavigationButton src={share} delayOnCLick onClick={handleShareClick} disable={status === TimeStatus.Running || status === TimeStatus.OverTimeRunning} />
         </div>
     )
 }
