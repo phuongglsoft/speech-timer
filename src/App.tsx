@@ -77,20 +77,24 @@ function App() {
     function handlePlay() {
       setTimePassed(prev => {
         const nextTime = prev + interval;
-        if (nextTime === time.warningTime * 1000 && sound !== 'disabled') {
+        if (nextTime === ((time.countDownTime - time.warningTime) * 1000 - 100) && sound !== 'disabled') {
           warningSoundRef.current?.play();
         }
+
         if (nextTime === time.countDownTime * 1000 && sound !== 'disabled') {
           finishSoundRef.current?.play();
         }
+
         if (nextTime / 1000 >= time.countDownTime && !isOverTime) {
           setStatus(TimeStatus.Complete)
           if (timerRef.current) clearInterval(timerRef.current);
         }
+
         else if (nextTime / 1000 >= time.countDownTime) {
           setStatus(TimeStatus.OverTimeRunning)
         }
         return nextTime;
+
       }
       );
     }
