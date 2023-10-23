@@ -77,14 +77,13 @@ function App() {
     function handlePlay() {
       setTimePassed(prev => {
         const nextTime = prev + interval;
-        if (nextTime === ((time.countDownTime - time.warningTime) * 1000 - 100) && sound !== 'disabled') {
+        if (time.warningTime > 0 && nextTime === ((time.countDownTime - time.warningTime) * 1000 - 100) && sound !== 'disabled' && time.warningTime < time.countDownTime) {
           warningSoundRef.current?.play();
         }
 
         if (nextTime === time.countDownTime * 1000 && sound !== 'disabled') {
           finishSoundRef.current?.play();
         }
-
         if (nextTime / 1000 >= time.countDownTime && !isOverTime) {
           setStatus(TimeStatus.Complete)
           if (timerRef.current) clearInterval(timerRef.current);
