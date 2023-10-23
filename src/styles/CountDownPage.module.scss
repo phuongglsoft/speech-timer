@@ -1,0 +1,45 @@
+.count-down-page-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: auto;
+  position: relative;
+  & > .count-down-time {
+    font-size: 13rem;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 5px;
+    &.warning {
+      color: #fefe00;
+    }
+    &.complete {
+      color: white;
+    }
+    &.small {
+      font-size: 8rem;
+    }
+    &.over-time {
+      color: #ff00fe;
+    }
+  }
+
+  & .over-time-title {
+    color: #7a2579;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    position: absolute;
+    top: 0;
+    left: auto;
+    right: auto;
+  }
+  & .time-format {
+    position: absolute;
+    color: #7a7a7a;
+    padding: 1rem;
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+    bottom: 0;
+  }
+}

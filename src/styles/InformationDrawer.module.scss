@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.content {
+  padding: 1rem;
+  color: white;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+.actions-container {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-around;
+  & > button{
+    border:none;
+    background-color: #262626;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 0.8rem 2.5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
+}

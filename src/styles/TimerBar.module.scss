@@ -1,0 +1,30 @@
+.timer-bar-container {
+  width: 100%;
+  position: relative;
+  margin-bottom: 1rem;
+  &.over-time {
+    opacity: 20%;
+  }
+}
+.timer-bar {
+  width: 100%;
+  background-color: #00d900;
+  height: 2rem;
+  position: relative;
+}
+
+.warning-bar {
+  position: absolute;
+  height: 100%;
+  background-color: #fefe00;
+  top: 0;
+  height: 2rem;
+  right: 0;
+}
+
+.pointer {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  transform: translateX(-50%);
+}

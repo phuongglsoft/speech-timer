@@ -1,0 +1,16 @@
+.bottom-navigation-bar-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  &.dim {
+    & > *:not(:nth-child(3)):not(:nth-child(4)) {
+      opacity: 20%;
+    }
+    & > *:nth-child(3) {
+      opacity: 60%;
+    }
+    & > *:nth-child(4) {
+      opacity: 60%;
+    }
+  }
+}
